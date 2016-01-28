@@ -1,3 +1,5 @@
 (function() {
-	angular.module('app.news', []);
+	'use strict';
+
+	angular.module('app.news', ['ui.router', 'ngResource']);
 })();
