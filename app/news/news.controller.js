@@ -35,7 +35,14 @@
 		}
 
 		vm.create = function() {
-			
+			if (! vm.title || ! vm.link) {
+				return;
+			}
+			NewsService.createNew(vm.title, vm.link).then(function() {
+				console.log('ok');
+			}).catch(function(err) {
+				console.log(err);
+			});
 		}
 	}
 })();
