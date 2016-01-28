@@ -14,7 +14,7 @@
 </div>
 <div class="well well-sm">
 	<h3>Create your own new !</h3>
-	<form>
+	<form ng-submit="news.create()">
 		<label for="title">Title</label><br/>
 		<input type="text" class="form-control" name="title" ng-model="news.title"/><br/>
 		<label for="link">Link</label><br/>
@@ -22,3 +22,7 @@
 		<button type="submit" class="btn btn-primary btn-sm">Create</button>
 	</form>
 </div>
+
+
+--UPDATE UI WHEN CREATING NEWS
+--LINK CONTAINS http://localhost:3001 before real link
