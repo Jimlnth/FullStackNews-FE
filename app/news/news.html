@@ -1,0 +1,24 @@
+<h1>FullStack News</h1>
+<div class="well well-lg" ng-repeat="new in news.news">
+	<h3>{{new.title}}</h3>
+	<a ng-href="{{new.link}}">Get to the new</a><br/>
+	<p class="btn btn-primary btn-sm" ng-click="news.vote($index)">like</p>
+	<p>{{new.votes}} people like this</p>
+	<div class="well well-sm" ng-repeat="comment in new.comments">
+		<p>{{comment.content}}</p>
+	</div>
+	<div>
+		<textarea cols="50" rows="3" placeholder="Enter your comment here" ng-model="news.textComment[$index]"></textarea><br/>
+		<button type="button" class="btn btn-primary btn-sm" ng-click="news.comment($index)">Send your comment</button>
+	</div>
+</div>
+<div class="well well-sm">
+	<h3>Create your own new !</h3>
+	<form ng-submit="news.create()">
+		<label for="title">Title</label><br/>
+		<input type="text" class="form-control" name="title" ng-model="news.title"/><br/>
+		<label for="link">Link</label><br/>
+		<input type="text" class="form-control" name="link" ng-model="news.link"/><br/>
+		<button type="submit" class="btn btn-primary btn-sm">Create</button>
+	</form>
+</div>
