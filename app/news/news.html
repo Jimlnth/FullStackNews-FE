@@ -1,7 +1,7 @@
 <h1>FullStack News</h1>
 <div class="well well-lg" ng-repeat="new in news.news">
 	<h3>{{new.title}}</h3>
-	<a href="{{new.link}}">Get to the new</a><br/>
+	<a ng-href="{{new.link}}">Get to the new</a><br/>
 	<p class="btn btn-primary btn-sm" ng-click="news.vote($index)">like</p>
 	<p>{{new.votes}} people like this</p>
 	<div class="well well-sm" ng-repeat="comment in new.comments">
@@ -22,5 +22,3 @@
 		<button type="submit" class="btn btn-primary btn-sm">Create</button>
 	</form>
 </div>
-
---LINK CONTAINS http://localhost:3001 before real link
