@@ -38,8 +38,10 @@
 			if (! vm.title || ! vm.link) {
 				return;
 			}
-			NewsService.createNew(vm.title, vm.link).then(function() {
-				console.log('ok');
+			NewsService.createNew(vm.title, vm.link).then(function(newNew) {
+				vm.news.push(newNew);
+				vm.title = "";
+				vm.link = "";
 			}).catch(function(err) {
 				console.log(err);
 			});
